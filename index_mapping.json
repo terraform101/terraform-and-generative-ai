@@ -1,0 +1,20 @@
+{
+    "properties": {
+        "metadata": {
+            "type": "knn_vector",
+            "dimension": "${dimension}",
+            "method": {"space_type": "cosinesimil"},
+            "properties": {
+                "source": {"type": "keyword"},
+                "page_number": {"type":"long"},
+                "category": {"type":"text"},
+                "file_directory": {"type":"text"},
+                "last_modified": {"type": "text"},
+                "type": {"type": "keyword"},
+                "image_base64": {"type":"text"},
+                "origin_image": {"type":"text"},
+                "origin_table": {"type":"text"}
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+  "TerraformAWSModules": [
+    {
+      "Name": "vpc",
+      "Description": "Terraform module to create AWS VPC resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-vpc",
+      "Version": "5.8.1",
+      "Tags": ["vpc", "aws-vpc"]
+    },
+    {
+      "Name": "ec2-instance",
+      "Description": "Terraform module to create AWS EC2 resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-ec2-instance",
+      "Version": "5.6.1",
+      "Tags": ["ec2", "aws-ec2"]
+    },
+    {
+      "Name": "s3",
+      "Description": "Terraform module to create AWS S3 resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-s3-bucket",
+      "Version": "4.1.2",
+      "Tags": ["s3", "aws-s3"]
+    },
+    {
+      "Name": "rds",
+      "Description": "Terraform module to create AWS RDS resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-rds",
+      "Version": "6.7.0",
+      "Tags": ["rds", "aws-rds"]
+    },
+    {
+      "Name": "iam",
+      "Description": "Terraform module to create AWS IAM resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-iam",
+      "Version": "5.39.1",
+      "Tags": ["iam", "aws-iam"]
+    },
+    {
+      "Name": "route53",
+      "Description": "Terraform module to create AWS Route53 resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-route53",
+      "Version": "3.1.0",
+      "Tags": ["route53", "aws-route53"]
+    },
+    {
+      "Name": "cloudfront",
+      "Description": "Terraform module to create AWS CloudFront resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-cloudfront",
+      "Version": "3.4.0",
+      "Tags": ["cloudfront", "aws-cloudfront"]
+    },
+    {
+      "Name": "ecs",
+      "Description": "Terraform module to create AWS ECS resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-ecs",
+      "Version": "5.11.2",
+      "Tags": ["ecs", "aws-ecs"]
+    },
+    {
+      "Name": "lambda",
+      "Description": "Terraform module to create AWS Lambda resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-lambda",
+      "Version": "7.7.0",
+      "Tags": ["lambda", "aws-lambda", "serverless"]
+    },
+    {
+      "Name": "dynamodb-table",
+      "Description": "Terraform module to create AWS DynamoDB resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table",
+      "Version": "4.0.1",
+      "Tags": ["dynamodb", "aws-dynamodb"]
+    },
+    {
+      "Name": "eks",
+      "Description": "Terraform module to create AWS EKS resources",
+      "Source": "https://github.com/terraform-aws-modules/terraform-aws-eks",
+      "Version": "20.15.0",
+      "Tags": ["eks", "aws-eks", "kubernetes", "eks-cluster", "elastic-kubernetes-service", "k8s"]
+    }
+  ]
+}
