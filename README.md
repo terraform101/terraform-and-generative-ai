@@ -231,6 +231,8 @@ resource "opensearch_index" "rag" {
 
 ## 2. GenAI Python 예제
 
+![Sample](./genbot-python/images/sample.png)
+
 ### 요구 사항
 
 - AWS 계정 및 자격 증명
