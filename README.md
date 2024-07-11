@@ -303,3 +303,49 @@ Amazon OpenSearch Service는 확장 가능한 오픈 소스 검색 및 분석 �
 - AWS 자격 증명을 안전하게 관리하세요. `.env` 파일에 저장하거나 환경 변수를 설정하는 방법을 추천합니다.
 - OpenSearch와 Bedrock 서비스는 AWS 비용이 발생할 수 있으므로, 사용 시 주의하시기 바랍니다.
 - 애플리케이션 사용 중 문제가 발생할 경우, 터미널 로그를 확인하여 디버깅할 수 있습니다.
+
+### 앱 실행/요청 플로우
+
+```mermaid
+graph TD
+    A[main.py 시작] --> B[Sidebar 생성]
+    B --> C[사용자로부터 AWS 자격 증명 입력]
+    
+    C --> E{AWS 자격 증명 존재 확인}
+    E -->|없음| F[경고 메시지 표시]
+    E -->|존재| G[파일 업로드 허용]
+    G --> H[파일 업로드 성공 시 이미지 표시 및 Terraform 코드 생성 버튼 표시]
+    H --> I[버튼 클릭 시 코드 생성 시작]
+    
+    I --> J[uploaded image decode]
+    J --> K[BedrockAPI 객체 생성]
+    K --> L[StreamlitCallbackHandler 객체 생성]
+    L --> M[BedrockAPI.query_llm 호출]
+    
+    M --> N[bedrock.py 시작]
+    N --> O[BedrockAPI 초기화]
+    O --> P[boto3 클라이언트 생성]
+    
+    P --> Q[BedrockAPI.get_llm 호출]
+    Q --> R[ChatBedrock 생성]
+    Q --> S[BedrockAPI.get_embeddings 호출]
+    S --> T[BedrockEmbeddings 생성 및 JSON 데이터 로드]
+    T --> U[OpenSearchVectorSearch 생성]
+    
+    U --> V[query_llm 수행]
+    V --> W[System 및 Human 프롬프트 설정]
+    W --> X[LLMChain 및 QAWithSourcesChain 생성]
+    X --> Y[질의 수행 및 응답 수신]
+    Y --> Z[응답 반환 및 Terraform 코드 생성 완료]
+
+    I --> AA[Terraform 코드 생성 완료 메시지 표시]
+    AA --> AB[Terraform 코드 다운로드 버튼 표시]
+    AB --> AC[Terraform 코드 다운로드]
+    
+    click B href "https://docs.streamlit.io/en/stable/"
+    click P href "https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"
+    click R href "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    click T href "https://opensearch.org/"
+    click W href "https://langchain.readthedocs.io/en/latest/"
+    click X href "https://python.langchain.com/en/latest/"
+```
