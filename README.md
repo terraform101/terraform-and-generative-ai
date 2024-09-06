@@ -237,13 +237,16 @@ resource "opensearch_index" "rag" {
 
 - AWS 계정 및 자격 증명
 - AWS CLI 설치 및 구성
+- Bedrock의 모델 활성화
+  - Titan Text Embeddings V2
+  - Claude 3.5 Sonnet
 - Python 3.8 이상 설치 (Pipfile에 명시된 버전에 따라 다름)
 - 필요한 Python 패키지 설치 (Pipenv 사용)
 
 ### 파일 구조
 
 - `main.py`: Streamlit을 사용하여 웹 애플리케이션을 실행하는 메인 파일
-- `genai/bedrock.py`: AWS Bedrock과 OpenSearch를 사용하여 Terraform 코드를 생성하는 로직을 포함한 파일
+- `genai/bedrock.py`: AWS Bedrock과 OpenSearch를 사용하여 Terraform 코드를 생성하는 로직을 포함한 파일이며 선행 프롬프트가 명시되어 있음
 - `Pipfile`: 필요한 패키지 목록과 Python 버전 요구 사항
 
 ### 주요 기능
